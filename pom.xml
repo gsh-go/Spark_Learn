@@ -11,10 +11,38 @@
     <properties>
         <spark.version>2.3.0</spark.version>
         <scala.version>2.11</scala.version>
+        <kafka.version>1.1.0</kafka.version>
+
     </properties>
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-10_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_${scala.version}</artifactId>
+            <version>0.10.0.1</version>
+        </dependency>
+
+      <!--  <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+-->
+
+
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.version}</artifactId>
@@ -41,8 +69,14 @@
             <version>${spark.version}</version>
         </dependency>
 
-    </dependencies>
+        <dependency>
+            <groupId>com.typesafe.scala-logging</groupId>
+            <artifactId>scala-logging_${scala.version}</artifactId>
+            <version>3.8.0</version>
+        </dependency>
 
+    </dependencies>
+<!--
     <build>
         <plugins>
 
@@ -79,7 +113,7 @@
             </plugin>
 
         </plugins>
-    </build>
+    </build>-->
 
 
 </project>
