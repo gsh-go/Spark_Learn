@@ -22,7 +22,8 @@ object NewWorkWordCount {
 
   def main (arg:Array[String ]): Unit ={
     val sparkConf = new SparkConf().setAppName("NetWorkWordCount")
-      .setMaster("spark://localhost:7077")
+      .setMaster("local[2]")
+      //.setMaster("spark://localhost:7077")
       .setJars(List("/home/gsh/WorkSpaces/Spark_Learn/out/artifacts/Spark_Learn_jar/Spark_Learn.jar"))
 
     val ssc = new StreamingContext(sparkConf, Seconds(10))

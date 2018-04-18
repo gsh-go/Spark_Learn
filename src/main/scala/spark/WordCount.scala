@@ -13,7 +13,8 @@ object WordCount {
 
   def main (arg:Array[String ]): Unit ={
     val spark = SparkSession.builder()
-      .master("spark://localhost:7077")
+      .master("local[2]")
+      //.master("spark://localhost:7077")
       .appName("Spark_WordCount")
       .config("spark.jars", "/home/gsh/WorkSpaces/Spark_Learn/out/artifacts/Spark_Learn_jar/Spark_Learn.jar")
       .getOrCreate();

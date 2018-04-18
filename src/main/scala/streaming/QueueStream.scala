@@ -19,7 +19,8 @@ object QueueStream {
 
 
     val sparkConf = new SparkConf().setAppName("QueueStream")
-      .setMaster("spark://localhost:7077")
+      .setMaster("local[2]")
+      //.setMaster("spark://localhost:7077")
       .setJars(List("/home/gsh/WorkSpaces/Spark_Learn/out/artifacts/Spark_Learn_jar/Spark_Learn.jar"))
 
     // Create the context
